@@ -10,8 +10,8 @@ std::bitset<8> Hamming84_encode(std::bitset<4> data) {
 	code[6] = data[0]; //d4
 	
 	
-	code[0] = (1 + code[2] + code[4] + code[6]) % 2; // p1
-	code[1] = (1 + code[2] + code[5] + code[6]) % 2; // p2
+	code[0] = (1 + code[2] + code[5] + code[6]) % 2; // p1
+	code[1] = (1 + code[2] + code[4] + code[6]) % 2; // p2
 	code[3] = (1 + code[2] + code[4] + code[5]) % 2; // p3
 	code[7] = (1 + code[0] + code[1] + code[2] + code[3] + code[4] + code[5] + code[6]) % 2; // p4
 	
@@ -19,7 +19,7 @@ std::bitset<8> Hamming84_encode(std::bitset<4> data) {
 }
 
 std::bitset<4> Hamming84_decode(std::bitset<8> code) {
-
+	
 	bool A = (1 + code[0] + code[2] + code[4] + code[6]) % 2;
 	bool B = (1 + code[1] + code[2] + code[5] + code[6]) % 2;
 	bool C = (1 + code[3] + code[4] + code[5] + code[6]) % 2;
@@ -63,4 +63,3 @@ int main() {
 	
 	return 0;
 }
-
