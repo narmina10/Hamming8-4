@@ -1,6 +1,4 @@
-cmake_minimum_required(VERSION 3.23)
-project(untitled3)
-
-set(CMAKE_CXX_STANDARD 20)
-
-add_executable(untitled3 Hamming8-4.cpp)
+cmake_minimum_required(VERSION 3.10)
+project(Hamming8-4)
+add_executable(Hamming8-4 main.cpp)
+target_link_libraries(Hamming8-4 gtest)
